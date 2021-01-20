@@ -40,7 +40,7 @@ Scanner in = new Scanner(System.in);
 		System.out.print("Zip: ");
 		person.setZipCode(in.next());
 		System.out.print("Phone Number: ");
-		person.setPhoneNumber(in.next());
+		person.setphoneNumber(in.next());
 		System.out.print("Email: ");
 		person.setEmail(in.next());
 		String name = person.getFirstName()+" "+person.getLastName();
@@ -63,7 +63,7 @@ Scanner in = new Scanner(System.in);
 		Boolean keyPresent = contactMap.containsKey(name);
 		if (keyPresent) {
 			System.out.println("Enter phone no");
-			contactMap.get(name).setPhoneNumber(in.next());
+			contactMap.get(name).setphoneNumber(in.next());
 			System.out.println("Enter email");
 			contactMap.get(name).setEmail(in.next());
 			System.out.println("Enter city");
@@ -107,10 +107,18 @@ Scanner in = new Scanner(System.in);
 		}
 	}
 	public List<Person> searchPersonsByCity(String city) {
-		return contactList.stream().filter(person -> person.getCity().equals(city)).collect(Collectors.toList());
+		return contactList.stream().filter(person -> person.getClass().equals(city)).collect(Collectors.toList());
 	}
 	public List<Person> searchPersonsByState(String state) {
-		return contactList.stream().filter(person -> person.getState().equals(state)).collect(Collectors.toList());
-	}	
+		return contactList.stream().filter(person -> person.getClass().equals(state)).collect(Collectors.toList());
+	}
+	public int countPersonsByCity(String city) {
+		return contactList.stream().filter(person -> person.getClass().equals(city)).collect(Collectors.toList()).size();
+	}
+
+	public int countPersonsByState(String state) {
+		return contactList.stream().filter(person -> person.getClass().equals(state)).collect(Collectors.toList()).size();
+	}
+		
 		
 }
