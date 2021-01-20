@@ -16,6 +16,12 @@ public class Person {
 
 	  }
 	
+	public Person(String firstName2, String lastName2, String phoneNum, String city, String state, String zipCode,
+			String email) {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public String toString() 
 	{
 		return "Person [firstname=" + firstName + ", lastname=" + lastName + ", phoneNumber=" + phoneNumber
@@ -52,6 +58,12 @@ public class Person {
 		this.phoneNumber = phoneNumber;
 	}
 
-}
+	
+		
+	}
+
+	
+
+
 
 
