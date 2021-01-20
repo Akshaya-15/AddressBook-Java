@@ -120,5 +120,7 @@ Scanner in = new Scanner(System.in);
 		return contactList.stream().filter(person -> person.getClass().equals(state)).collect(Collectors.toList()).size();
 	}
 		
-		
+	public List<Person> sortPersonsByName(String Name) {
+		return contactList.stream().filter(person -> person.getClass().equals(Name)).collect(Collectors.toList());
+	}	
 }
