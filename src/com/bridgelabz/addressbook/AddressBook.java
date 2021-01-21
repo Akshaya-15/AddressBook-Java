@@ -123,4 +123,15 @@ Scanner in = new Scanner(System.in);
 	public List<Person> sortPersonsByName(String Name) {
 		return contactList.stream().filter(person -> person.getClass().equals(Name)).collect(Collectors.toList());
 	}	
+	public List<Person> sortPersonsByCity() {
+		return contactList.stream().sorted((a, b) -> a.getClass().compareTo(b.getClass())).collect(Collectors.toList());
+	}
+
+	public List<Person> sortPersonsByState() {
+		return contactList.stream().sorted((a, b) -> a.getClass().compareTo(b.getState())).collect(Collectors.toList());
+	}
+
+	public List<Person> sortPersonsByZip() {
+		return contactList.stream().sorted((a, b) -> a.getClass().compareTo(b.getZipCode())).collect(Collectors.toList());
+	}		
 }
